@@ -1,5 +1,9 @@
-resource "aws_instance" "ec2_instances" {
-    subnet_id = aws_subnet.principal
 
+
+resource "aws_instance" "web_servers" {
+  count = 3
+  ami = local.ami_id
+  instance_type = var.server_config.instance_type
+    
 
 }

@@ -1,5 +1,5 @@
 Step 1 - Dynamic Availability Zones
-Phase Goal
+Phase Goal:
 Build a region-agnostic AWS infrastructure using Terraform that dynamically selects availability zones without hardcoding, allowing the same code to work across different AWS regions.
 What I Learned:
 1. Using Data Sources to Fetch Availability Zones

@@ -7,10 +7,13 @@ variable "public_subnets" {
   }))
 }
 
-variable "server_configs" {
-    type = map(object({
-        ami = string
-        instance_type = string
-        
-    }))
+variable "server_config" {
+  type = object({
+    instance_type = string
+    root_block_device = object({
+      volume_size = number
+      volume_type = string
+    })
+
+  })
 }

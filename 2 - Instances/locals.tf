@@ -1,4 +1,4 @@
 locals {
-  project = "count_expression"
-  ami_id = "ubuntu"
+  project = "phase_2"
+  ami_id  = "ubuntu"
 }

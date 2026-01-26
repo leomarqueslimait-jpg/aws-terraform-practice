@@ -15,3 +15,9 @@ provider "aws" {
   region = "us-east-1"
 }
 
+We will create a a locals.tf where we can store our local expressions
+
+A networking.tf will store networking configuration: VPC and subnet
+
+Compute.tf will store ec2 instances configuration
+Variables.tf will store the variables expressions

@@ -1,7 +1,7 @@
-Terraform Dynamic Availability Zones Project
-Project Goal
+Step 1 - Dynamic Availability Zones
+Phase Goal
 Build a region-agnostic AWS infrastructure using Terraform that dynamically selects availability zones without hardcoding, allowing the same code to work across different AWS regions.
-What I Learned
+What I Learned:
 1. Using Data Sources to Fetch Availability Zones
 Instead of hardcoding availability zones like "us-east-1a" which only works in one region, I learned to use the aws_availability_zones data source to dynamically fetch available AZs for any region.
 Created data.tf:

@@ -74,36 +74,7 @@ In us-east-1, index 0 might be us-east-1a
 In eu-west-1, index 0 might be eu-west-1a
 The code adapts automatically
 
-5. Syntax Errors I Fixed
-Error 1: Missing dot in object access
-hcl# ❌ Wrong
-cidr_block = each.value_cidr_block
-
-# ✅ Correct
-cidr_block = each.value.cidr_block
-Error 2: Missing .id attribute
-hcl# ❌ Wrong
-vpc_id = aws_vpc.principal
-
-# ✅ Correct
-vpc_id = aws_vpc.principal.id
-Error 3: Inconsistent local reference
-hcl# I used both locals.project and local.project
-# ✅ Correct syntax is: local.project (singular)
-6. CIDR Block Planning
-I initially had overlapping CIDR blocks:
-
-10.0.0.0/24
-10.0.0.1/24 ❌ This overlaps with the first one!
-
-Fixed:
-
-10.0.1.0/24
-10.0.2.0/24
-10.0.3.0/24
-
-Each subnet gets its own /24 block within the VPC's /16 range.
-7. Complete Working Implementation
+5. Complete Working Implementation
 networking.tf:
 hclresource "aws_vpc" "principal" {
   cidr_block = "10.0.0.0/16"

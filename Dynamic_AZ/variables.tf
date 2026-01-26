@@ -7,10 +7,3 @@ variable "public_subnets" {
   }))
 }
 
-variable "server_configs" {
-    type = map(object({
-        ami = string
-        instance_type = string
-        
-    }))
-}

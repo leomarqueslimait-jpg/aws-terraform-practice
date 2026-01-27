@@ -210,7 +210,7 @@ resource "aws_instance" "web_servers" {
 }
 ```
 
-This creates a direct 1:1 relationship between subnets and instances. The keys match automatically, ensuring "server_public-1" subnet gets instance "server_public-1".
+This creates a direct 1:1 relationship between subnets and instances. The keys match automatically, ensuring "server_public-1" subnet gets instance "server_public-1". So, instances are highly available.
 
 ## Complete Working Implementation
 

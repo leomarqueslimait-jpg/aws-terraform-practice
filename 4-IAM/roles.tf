@@ -1,5 +1,3 @@
-/* we 
-*/
 locals {
   users = ["John", "Jane", "Lauro"]
 
@@ -9,25 +7,19 @@ locals {
     "developer" = "arn:aws:iam::aws:policy/PowerUserAccess"
   }
 }
-resource "aws_iam_user_login_profile" "users" {
-  for_each = aws_iam_user.users
-  password_length = 8
-  user = each.value.name
-}
 
 resource "aws_iam_user" "users" {
   for_each = toset(local.users)
   name     = each.value
 }
-# creates the role. We use for_each to extract the keys from local.role_policy_map and create a role where name is the key of each item.
-#Use assume_role_policy to state what is the policy of each role.
+
 resource "aws_iam_role" "roles" {
   for_each           = local.role_policy_map
   name               = each.key
   assume_role_policy = data.aws_iam_policy_document.assume_role_policy.json
 
 }
-# data "aws_iam_policy_document" attaches each role to a user. In identifies we need to fetch the .arn attribute. It is with .arn that Amazon work with it
+
 data "aws_iam_policy_document" "assume_role_policy" {
   statement {
     actions = ["sts:AssumeRole"]
@@ -38,6 +30,7 @@ data "aws_iam_policy_document" "assume_role_policy" {
   }
 }
 
+
 resource "aws_iam_role_policy_attachment" "policy_attachment" {
 
   for_each   = local.role_policy_map
@@ -46,6 +39,11 @@ resource "aws_iam_role_policy_attachment" "policy_attachment" {
 
 }
 
+resource "aws_iam_user_login_profile" "users" {
+  for_each = aws_iam_user.users
+  password_length = 8
+  user = each.value.name
+}
 
 output "passwords" {
   sensitive = true

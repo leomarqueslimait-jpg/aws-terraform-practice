@@ -286,16 +286,17 @@ value = { for k, v in aws_instance.web_servers : k => v.id }
 
 ## Future Enhancements
 
-Potential improvements for Phase 4:
-1. Add Application Load Balancer for web tier
-2. Implement Auto Scaling Groups
-3. Add RDS database in private subnets
-4. Configure CloudWatch monitoring and alarms
-5. Implement Systems Manager Session Manager for private instance access
-6. Add S3 bucket for static content
-7. Implement VPC Flow Logs for network monitoring
-8. Add WAF (Web Application Firewall)
-9. Implement proper secret management with AWS Secrets Manager
+Potential improvements in future Phases:
+1. Add Users, Roles, and Permissions.
+2. Add Application Load Balancer for web tier
+3. Implement Auto Scaling Groups
+4. Add RDS database in private subnets
+5. Configure CloudWatch monitoring and alarms
+6. Implement Systems Manager Session Manager for private instance access
+7. Add S3 bucket for static content
+8. Implement VPC Flow Logs for network monitoring
+9. Add WAF (Web Application Firewall)
+10. Implement proper secret management with AWS Secrets Manager
 
 ## Lessons Learned
 

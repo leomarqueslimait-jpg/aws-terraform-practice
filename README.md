@@ -18,7 +18,7 @@ I am learning using the **Lauro Muller course** as well as **HCL registry docume
 
 ## My Learning Approach
 
-I use Claude to ask questions about a concept that I am not getting it or to give me examples. I also use Claude to give me ideas of projects.
+I use Claude to ask questions about a concept that I am not getting or to give me examples. I also use Claude to give me ideas for projects.
 
 I then try to create them **without using AI**, and only use it when I have been stuck for a bit. I then ask Claude to explain to me **why** something does not work, instead of just giving me the solution.
 

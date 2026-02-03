@@ -42,7 +42,7 @@ resource "aws_route_table" "public_rtb" {
         gateway_id = aws_internet_gateway.igw[0].id
     }
 }
-#create nat gateway
+#TO DO: nat gateway adn EIP variable
 resource "aws_nat_gateway" "ngw" {
     allocation_id =
     subnet_id = aws.subnet_public
